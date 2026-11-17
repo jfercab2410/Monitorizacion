@@ -32,7 +32,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       ps [opciones] <br>
         ◦ aux: Muestra todos los procesos de todos los usuarios (a, x) en un formato orientado al usuario con detalles de CPU y memoria (u). <br>
         ◦ -ef: Muestra todos los procesos en formato completo estándar, incluyendo el PPID (PID del proceso padre). <br>
-  • Captura de pantalla:  <br>
+  • Captura de pantalla: <br> <img src="capturas/1.png" width="500" height="400" /> <img src="capturas/2.png" width="500" height="400" /> <br>
   • Interpretación: En pantalla se observan columnas como USER, PID, %CPU, %MEM, STAT (estado del proceso, por ejemplo, S dormido o R en ejecución) y COMMAND. Un administrador utiliza esta herramienta para identificar rápidamente qué proceso está consumiendo demasiados recursos o para obtener su PID y detenerlo con kill si se ha quedado bloqueado. <br>
 ## 1.2. top
   • Finalidad: Proporciona una vista dinámica y en tiempo real de los procesos en ejecución, además de un resumen global del estado del sistema (tiempo encendido, carga media, uso de CPU y memoria). <br>
@@ -41,7 +41,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       top [opciones] <br>
         ◦ -d <segundos>: Establece el intervalo de actualización de la pantalla (ej. top -d 2 actualiza cada 2 segundos). <br>
         ◦ -u <usuario>: Filtra y muestra únicamente los procesos pertenecientes a un usuario específico. <br>
-  • Captura de pantalla:  <br>
+  • Captura de pantalla:  <br> <img src="capturas/3.png" width="500" height="400" /> <img src="capturas/4.png" width="500" height="400" /> <br>
   • Interpretación: La cabecera muestra el load average (carga media del sistema en 1, 5 y 15 minutos) y el desglose del uso de CPU (us usuario, sy sistema, id inactivo). Debajo aparece la lista ordenada por consumo de CPU. Permite diagnosticar en vivo si un servidor está saturado por procesos de usuario o por operaciones del kernel. <br>
 ## 1.3. htop
   • Finalidad: Es un visor de procesos interactivo y mejorado respecto a top. Permite desplazarse vertical y horizontalmente, gestionar procesos mediante teclas de función (matar, cambiar prioridad/nice) y visualizar barras gráficas de uso por cada núcleo de CPU. <br>
@@ -51,7 +51,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
      htop [opciones] <br>
         ◦ -t: Muestra los procesos en formato de árbol (tree), facilitando ver la jerarquía entre procesos padres e hijos. <br>
         ◦ -p <PID,PID>: Monitoriza únicamente los identificadores de proceso indicados. <br>
-  • Captura de pantalla:  <br>
+  • Captura de pantalla:  <br> <img src="capturas/5.png" width="500" height="400" /> <img src="capturas/6.png" width="500" height="400" /> <br>
   • Interpretación: Muestra barras de colores en la parte superior que representan el uso individual de cada hilo de CPU, la memoria RAM y la Swap. Es ideal para administradores que necesitan una interfaz visual ágil para detectar cuellos de botella en núcleos concretos o finalizar árboles de procesos complejos sin necesidad de escribir comandos adicionales. <br>
 ## 1.4. atop
   • Finalidad: Monitor avanzado de rendimiento del sistema a nivel de proceso y hardware. A diferencia de top, registra la actividad de todos los recursos críticos (CPU, memoria, disco y red) y permite guardar históricos para analizar fallos pasados. <br>
@@ -61,7 +61,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       atop [opciones] [intervalo] <br>
         ◦ -d: Muestra la actividad de lectura/escritura en disco por cada proceso. <br>
         ◦ -n: Muestra el consumo de red asociado a cada proceso (requiere módulo del kernel netatop). <br>
-  • Captura de pantalla:  <br>
+  • Captura de pantalla:  <br> <img src="capturas/7.png" width="500" height="400" /> <img src="capturas/8.png" width="500" height="400" /> <br>
   • Interpretación: Divide la pantalla en dos mitades: la superior resume el hardware (CPU, CPL, MEM, SWP, DSK, NET) y resalta en rojo los recursos sobrecargados; la inferior detalla los procesos. Es fundamental para auditorías de rendimiento y para averiguar qué proceso provocó una caída de rendimiento momentos antes. <br>
 
 ## 2. Memoria RAM
@@ -72,7 +72,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       free [opciones] <br>
         ◦ -h: Muestra los valores en formato legible para humanos (human-readable: MiB, GiB). <br>
         ◦ -s <segundos>: Ejecuta el comando de forma continua refrescando los datos cada N segundos. <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/9.png" width="500" height="400" /> <img src="capturas/10.png" width="500" height="400" /> <br>
    • Interpretación: Presenta columnas como total, used, free, shared, buff/cache y available. Un administrador se fija principalmente en la columna available, ya que indica cuánta memoria real está disponible para iniciar nuevas aplicaciones sin necesidad de recurrir a la memoria Swap (cuyo uso excesivo degrada gravemente el rendimiento). <br>
 
 ## 3. Almacenamiento
@@ -83,7 +83,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       df [opciones] <br>
         ◦ -h: Muestra el tamaño en unidades legibles (KB, MB, GB). <br>
         ◦ -T: Incluye una columna adicional indicando el tipo de sistema de archivos (ej. ext4, tmpfs, xfs). <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/11.png" width="500" height="400" />  <br>
    • Interpretación: Muestra el dispositivo (Filesystem), tamaño total, espacio usado, disponible, porcentaje de uso (Use%) y punto de montaje (Mounted on). Permite prevenir caídas de servicios causadas por particiones llenas al 100% (como /var o /). <br>
 ## 3.2. du
    • Finalidad: (Disk Usage) Estima y resume el espacio en disco ocupado por archivos y directorios específicos. <br>
@@ -92,7 +92,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       du [opciones] [ruta] <br>
         ◦ -s: Muestra únicamente el tamaño total de cada argumento especificado (summary), sin listar todos los subdirectorios. <br>
         ◦ -h: Muestra los tamaños en formato legible (KB, MB, GB). (Combinados como du -sh *). <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/12.png" width="500" height="400" />  <br>
    • Interpretación: Lista el peso de cada carpeta o archivo. Cuando df alerta de que un disco está lleno, el administrador utiliza du para navegar por las carpetas y localizar exactamente qué directorio, archivo de log o copia de seguridad está consumiendo todo el espacio. <br>
 ## 3.3. iostat
    • Finalidad: Monitoriza la carga de los dispositivos de almacenamiento (discos duros/SSD) observando los tiempos de transferencia y las operaciones de entrada/salida (I/O) por segundo, además de estadísticas de CPU. <br>
@@ -102,7 +102,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       iostat [opciones] [intervalo] <br>
         ◦ -x: Muestra estadísticas extendidas detalladas (tiempos de espera, tamaño de cola, porcentaje de utilización). <br>
         ◦ -m: Muestra las tasas de transferencia en megabytes por segundo (MB/s) en lugar de bloques/KB. <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/13.png" width="500" height="400" /> <img src="capturas/14.png" width="500" height="400" /> <br>
    • Interpretación: En las métricas extendidas (-x), valores altos en %util (cercanos al 100%) o tiempos elevados en await indican saturación del disco. Sirve para diagnosticar si la lentitud de una base de datos o servidor web se debe a un cuello de botella en el almacenamiento. <br>
 
 ## 4. Tráfico de Red
@@ -114,7 +114,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       sudo tcpdump [opciones] [expresión_filtro] <br>
         ◦ -i <interfaz>: Especifica la interfaz de red a escuchar (ej. eth0, ens33 o any para todas). <br>
         ◦ -n: Evita la resolución de nombres DNS y puertos, mostrando direcciones IP y números de puerto directamente (acelera la captura). <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/15.png" width="500" height="400" /><br>
    • Interpretación: Muestra la marca de tiempo, protocolo, IP/puerto de origen, IP/puerto de destino y flags TCP de cada paquete. Es imprescindible para depurar problemas de conectividad, comprobar si el tráfico llega al servidor o detectar tráfico malicioso. <br>
 ## 4.2. tcptrack
    • Finalidad: Monitoriza las conexiones TCP activas en una interfaz de red específica, mostrando su estado, direcciones de origen/destino y el ancho de banda que consume cada conexión en tiempo real. <br>
@@ -124,7 +124,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       sudo tcptrack -i <interfaz> [opciones] <br>
         ◦ -i <interfaz>: Indica obligatoriamente la tarjeta de red a analizar (ej. sudo tcptrack -i enp0s3). <br>
         ◦ -r <segundos>: Establece el tiempo que una conexión cerrada permanece visible en pantalla antes de desaparecer. <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/16.png" width="500" height="400" />  <br>
    • Interpretación: Presenta una tabla ordenada por consumo de ancho de banda con el origen, destino, estado (ESTABLISHED, SYN_SENT, etc.) y velocidad de transferencia. Ayuda al administrador a identificar qué cliente o servicio externo está consumiendo todo el ancho de banda del servidor. <br>
 ## 4.3. iptraf (iptraf-ng)
    • Finalidad: Monitor de red interactivo basado en menús de consola (ncurses) que ofrece estadísticas detalladas sobre el tráfico IP, desglose por protocolos (TCP, UDP, ICMP), tamaño de paquetes y actividad por interfaz. <br>
@@ -134,7 +134,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       sudo iptraf-ng [opciones] <br>
         ◦ -i <interfaz>: Inicia directamente el monitor de tráfico IP en la interfaz indicada saltándose el menú principal. <br>
         ◦ -s <interfaz>: Inicia el monitor de estadísticas por puertos TCP/UDP en dicha interfaz. <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/17.png" width="500" height="400" /> <img src="capturas/18.png" width="500" height="400" /> <br>
    • Interpretación: Permite visualizar de forma estructurada qué puertos reciben más tráfico (por ejemplo, tráfico HTTP en el puerto 80 o SSH en el 22) y detectar picos anómalos de paquetes por segundo en la tarjeta de red. <br>
 ## 4.4. bmon
    • Finalidad: (Bandwidth Monitor) Herramienta de monitorización de ancho de banda y depuración de red que captura estadísticas de las interfaces y las representa mediante gráficos ASCII dinámicos en la terminal. <br>
@@ -144,7 +144,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       bmon [opciones] <br>
         ◦ -p <interfaz>: Filtra y muestra únicamente la interfaz de red seleccionada (ej. bmon -p ens33). <br>
         ◦ -b: Muestra las tasas de transferencia en bits por segundo en lugar de bytes por segundo. <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/19.png" width="500" height="400" /> <br>
    • Interpretación: Visualiza en tiempo real la tasa de recepción (RX) y transmisión (TX), paquetes por segundo y errores o descartes de paquetes (Errors/Dropped). Resulta muy útil para comprobar visualmente la estabilidad del enlace de red y detectar pérdidas de paquetes. <br>
 
 ## 5. Puertos y Conexiones
@@ -155,7 +155,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       ss [opciones] <br>
         ◦ -tuln: Muestra sockets TCP (-t) y UDP (-u) que están en estado de escucha (-l) mostrando puertos numéricos (-n) sin resolver nombres. <br>
         ◦ -p: Muestra el nombre y el PID del proceso propietario de cada socket (requiere sudo). <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/20.png" width="500" height="400" /> <img src="capturas/21.png" width="500" height="400" /> <br>
    • Interpretación: Indica el protocolo (Netid), el estado (LISTEN, ESTAB), la dirección IP local y puerto (Local Address:Port) y el proceso asociado. Un administrador lo usa para verificar qué servicios están levantados localmente y en qué interfaces escuchan (ej. 0.0.0.0 vs 127.0.0.1). <br>
 ## 5.2. nmap
    • Finalidad: (Network Mapper) Herramienta de exploración de red y auditoría de seguridad. Permite descubrir equipos activos en una red, escanear puertos abiertos desde el exterior y detectar qué servicios y versiones se ejecutan detrás de ellos. <br>
@@ -165,7 +165,7 @@ El objetivo de esta práctica es conocer, instalar y utilizar las principales he
       nmap [opciones] <objetivo> <br>
         ◦ -sV: Sondea los puertos abiertos para determinar la información del servicio y su número de versión. <br>
         ◦ -p <puertos>: Escanea únicamente los puertos especificados (ej. nmap -p 22,80,443 192.168.1.10). <br>
-   • Captura de pantalla:  <br>
+   • Captura de pantalla:  <br> <img src="capturas/22.png" width="500" height="400" /> <br>
    • Interpretación: Devuelve una tabla con el puerto, su estado (open, closed, filtered) y el servicio asociado. Es clave para comprobar la superficie de exposición de un servidor desde fuera y verificar que las reglas del cortafuegos (firewall) bloquean correctamente los puertos no deseados. <br>
 
 ## 6. Análisis de Resultados
